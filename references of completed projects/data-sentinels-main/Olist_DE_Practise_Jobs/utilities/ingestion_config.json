@@ -1,0 +1,108 @@
+{
+    "base_path": "/Volumes/data_sentinals/raw/ingestion_layer/",
+    "files": {
+        "olist_customers_dataset.csv": {
+            "table_name": "raw_customers",
+            "schema": "customer_id STRING, customer_unique_id STRING, customer_zip_code_prefix INT, customer_city STRING, customer_state STRING",
+            "dq_rules": {
+                "valid_customer_id": "customer_id IS NOT NULL",
+                "valid_zip_code": "customer_zip_code_prefix > 0"
+            },
+             "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "product_category_name_translation.csv": {
+            "table_name": "raw_product_names_translation",
+            "schema": "product_category_name STRING, product_category_name_english STRING",
+             "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_sellers_dataset.csv":{
+          "table_name":"raw_olist_sellers",
+          "schema":"seller_id STRING,seller_zip_code_prefix STRING, seller_city STRING, seller_state STRING",
+          "dq_rules":{
+            "valid_seller_id": "seller_id is not null"
+
+          },
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_products_dataset.csv":{
+          "table_name":"raw_products",
+          "schema":"product_id STRING, product_category_name STRING, product_name_lenght STRING, product_description_lenght STRING, product_photos_qty STRING, product_weight_g INTEGER, product_length_cm INTEGER,product_height_cm INTEGER, product_width_cm INTEGER",
+          "dq_rules":{
+            "valid_product_id": "product_id is not null"
+            
+          },
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_orders_dataset.csv":{
+          "table_name":"raw_orders",
+          "schema":"order_id string, customer_id string, order_status string, order_purchase_timestamp timestamp, order_approved_at timestamp, order_delivered_carrier_date timestamp, order_delivered_customer_date timestamp, order_estimated_delivery_date timestamp",
+          "timestamp_format":"yyyy-MM-dd HH:mm:ss",
+          "dq_rules":{
+            "valid_order_id": "order_id is not null"
+            
+          },
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_order_payments_dataset.csv":{
+          "table_name":"raw_order_payments",
+          "schema":"order_id string, payment_sequential integer,payment_type string,payment_installments integer,payment_value double",
+          "dq_rules":{
+            "valid_order_id":"order_id is not null"
+          },
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_order_items_dataset.csv":{
+          "table_name":"raw_order_items",
+          "schema":"order_id string ,order_item_id string, product_id string, seller_id string, shipping_limit_date timestamp,price double,freight_value double",
+          "timestamp_format":"yyyy-MM-dd HH:mm:ss",
+          "dq_rules":{
+            "valid_order_id":"order_id is not null"
+            
+          },
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_geolocation_dataset.csv":{
+          "table_name":"raw_geolocation",
+          "schema":"geolocation_zip_code_prefix string, geolocation_lat string, geolocation_lng string, geolocation_city string, geolocation_state string",
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        },
+        "olist_order_reviews_dataset.csv":{
+          "table_name":"raw_order_reviews",
+          "schema":"review_id string,order_id string,review_score integer,review_comment_title string,review_comment_message string,review_creation_date timestamp,review_answer_timestamp timestamp",
+          "timestamp_format":"yyyy-MM-dd HH:mm:ss",
+          "dq_rules":{
+            "valid_review_id":"review_id is not null"
+            
+          },
+           "file_format": "csv",
+              "header": true,
+              "delimiter": ",",
+              "load_mode": "overwrite"
+        }
+
+    }
+}

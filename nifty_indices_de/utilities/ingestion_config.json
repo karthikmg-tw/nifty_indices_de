@@ -1,0 +1,173 @@
+{
+    "base_path": "/Volumes/nifty_de/raw/ingestion_layer/",
+    "files": {
+        "INDIAVIX.csv": {
+            "table_name": "raw_indiavix",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Previous DOUBLE, Change DOUBLE, PctChange DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY 50.csv": {
+            "table_name": "raw_nifty50",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY NEXT 50.csv": {
+            "table_name": "raw_niftynext50",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY MIDCAP 150.csv": {
+            "table_name": "raw_niftymidcap150",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY SMALLCAP 250.csv": {
+            "table_name": "raw_niftysmalcap250",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY MICROCAP 250.csv": {
+            "table_name": "raw_niftymicrocap250",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY 100.csv": {
+            "table_name": "raw_nifty100",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY 500.csv": {
+            "table_name": "raw_nifty500",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY AUTO.csv": {
+            "table_name": "raw_niftyauto",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY BANK.csv": {
+            "table_name": "raw_niftybank",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY FMCG.csv": {
+            "table_name": "raw_niftyfmcg",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY IT.csv": {
+            "table_name": "raw_niftyit",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY METAL.csv": {
+            "table_name": "raw_niftymetal",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        },
+        "NIFTY PHARMA.csv": {
+            "table_name": "raw_niftypharma",
+            "schema": "Date STRING, Open DOUBLE, High DOUBLE, Low DOUBLE, Close DOUBLE, Volume DOUBLE, Turnover DOUBLE, PE DOUBLE, PB DOUBLE, DivYield DOUBLE",
+            "dq_rules": {
+                "valid_date": "Date IS NOT NULL",
+                "positive_close": "Close > 0"
+            },
+            "file_format": "csv",
+            "header": true,
+            "delimiter": ",",
+            "load_mode": "overwrite"
+        }
+    }
+}
