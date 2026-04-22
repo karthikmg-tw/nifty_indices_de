@@ -17,7 +17,9 @@ spark.sql("USE CATALOG nifty_de")
 spark.sql("USE SCHEMA bronze")
 
 current_script_path = os.getcwd()
-repo_root = current_script_path.split("nifty_indices_de")[0] + "nifty_indices_de"
+_marker = "nifty_indices_de"
+_idx = current_script_path.rfind(_marker)
+repo_root = current_script_path[:_idx + len(_marker)]
 CONFIG_PATH = os.path.join(repo_root, "utilities", "ingestion_config.json")
 
 try:

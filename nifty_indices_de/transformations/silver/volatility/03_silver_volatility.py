@@ -10,9 +10,8 @@ import sys
 
 _cwd = os.getcwd()
 if "nifty_indices_de" in _cwd:
-    _utilities_dir = os.path.join(
-        _cwd.split("nifty_indices_de")[0], "nifty_indices_de", "utilities"
-    )
+    _idx = _cwd.rfind("nifty_indices_de")
+    _utilities_dir = os.path.join(_cwd[:_idx + len("nifty_indices_de")], "utilities")
 else:
     _utilities_dir = os.path.join(_cwd, "utilities")
 if _utilities_dir not in sys.path:
