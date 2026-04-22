@@ -16,6 +16,7 @@ else:
 if _utilities_dir not in sys.path:
     sys.path.insert(0, _utilities_dir)
 
+from index_common import enrich_calendar_parts  # noqa: E402
 from sector_rotation_logic import (  # noqa: E402
     build_sector_monthly_returns,
     join_benchmark_returns,
@@ -43,6 +44,7 @@ def sector_monthly_returns_silver():
         .filter("is_zero_ohlc = false")
         .filter("index_category IN ('sector', 'broad')")
     )
+    base = enrich_calendar_parts(base)
     monthly = build_sector_monthly_returns(base)
     with_rs = join_benchmark_returns(monthly)
     return rank_sectors_by_month(with_rs)
