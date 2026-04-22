@@ -16,17 +16,16 @@ logger.setLevel(logging.INFO)
 spark.sql("USE CATALOG nifty_de")
 spark.sql("USE SCHEMA bronze")
 
-current_script_path = os.getcwd()
-_marker = "nifty_indices_de"
-_idx = current_script_path.rfind(_marker)
-repo_root = current_script_path[:_idx + len(_marker)]
-CONFIG_PATH = os.path.join(repo_root, "utilities", "ingestion_config.json")
+import index_common as _ic
+_utilities_dir = os.path.dirname(os.path.abspath(_ic.__file__))
+CONFIG_PATH = os.path.join(_utilities_dir, "ingestion_config.json")
 
 try:
     with open(CONFIG_PATH, "r") as f:
         pipeline_config = json.load(f)
 except Exception as e:
     logger.info(f"Error loading config file: {e}")
+    raise RuntimeError(f"Cannot load ingestion config from {CONFIG_PATH}: {e}")
 
 BASE_PATH = pipeline_config["base_path"]
 files_to_load = pipeline_config["files"]
